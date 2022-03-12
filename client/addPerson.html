@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Add Person</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="">
+
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+        
+        body {
+            font-family: "Lato", sans-serif;
+            -webkit-transition: background 0.5s ease;
+            transition: background 0.5s ease;
+        }
+        /*for searching image*/
+        
+        #one {
+            margin-top: 70px;
+            background: rgba(107, 107, 107, 0.2);
+            box-shadow: 0px 0px 5px 2px rgba(216, 216, 216, 0.2);
+        }
+        
+        .it {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card-description {
+            text-align: center;
+            margin: 30px 0px;
+            color: rgb(255, 255, 255);
+            background-color: #17a2b8;
+            border-radius: 2px;
+        }
+        /*table*/
+        
+        .list-image {
+            width: 100px;
+        }
+        
+        .list-image img {
+            vertical-align: middle;
+            border-style: none;
+        }
+        /*title*/
+        
+        .bold {
+            font-size: 5em;
+            position: absolute;
+            font-weight: 700 !important;
+            color: rgba(255, 255, 255, 0.08);
+            text-transform: uppercase;
+        }
+        
+        .form-group .label {
+            color: #808080;
+        }
+        
+        .label {
+            text-align: left;
+            margin-bottom: 0px;
+        }
+        
+        .image-action button {
+            border-radius: 5px;
+            width: 200px;
+            height: 50px;
+        }
+        /* Container */
+        
+        .wrapper {
+            width: 200px;
+            border-radius: 5px;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.2);
+        }
+        
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 100%;
+        }
+        /* Images */
+        
+        .carousel-img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            -webkit-transition: opacity ease-out 0.5s;
+            transition: opacity ease-out 0.5s;
+        }
+        
+        .carousel-img-displayed {
+            display: block;
+            opacity: 1;
+            z-index: 2;
+        }
+        
+        .carousel-img-hidden {
+            display: block;
+            opacity: 0;
+            z-index: 1;
+        }
+        
+        .carousel-img-noDisplay {
+            display: none;
+        }
+        /* Flèches de défilement */
+        
+        .carousel-arrow {
+            z-index: 3;
+            display: block;
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            top: 50%;
+            margin-top: -18px;
+            border-radius: 40%;
+            border: 0;
+            color: rgb(255, 255, 255);
+            background-color: rgba(255, 255, 255, 0);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 16px 16px;
+            cursor: pointer;
+            -webkit-transition: background-size 0.15s ease-out;
+            transition: background-size 0.15s ease-out;
+        }
+        
+        .carousel-arrow-next {
+            right: 0px;
+        }
+        
+        .carousel-arrow-prev {
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="KW_progressContainer">
+        <div class="KW_progressBar">
+
+        </div>
+    </div>
+
+    <div class="page">
+        <nav id="colorlib-main-nav" role="navigation">
+            <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+            <div class="js-fullheight colorlib-table">
+                <div class="colorlib-table-cell js-fullheight">
+                    <div class="row no-gutters">
+                        <div class="col-md-12 text-center">
+                            <ul>
+                                <li><a href="index.html"><span>Home</span></a></li>
+                                <li><a href="masterlist.html"><span>Masterlist</span></a></li>
+                                <li><a href="work.html"><span>My works</span></a></li>
+                                <li class="active"><a href="about.html"><span>About me</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!--END nav-->
+
+        <div id="colorlib-page">
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="colorlib-navbar-brand">
+                                <a class="colorlib-logo" href="index.html"><span class="logo-img" style="background-image: url(images/person-1.jpg);"></span>Maeva Razafimanjato</a>
+                            </div>
+                            <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--END Header-->
+
+            <section class="ftco-section">
+                <div class="container">
+                    <div class="row text-center">
+                        <h4 class="bold">Register</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 ftco-animate" id="one">
+                            <div class="row it">
+                                <div class="col-sm-12">
+                                    <form action="" class="form-sample">
+                                        <p class="card-description">COORDONNEES DE LA PERSONNE</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <!--Carousel Gallery-->
+                                                <div class="wrapper ftco-animate">
+
+                                                    <div class="carousel list-image align-self-md-center">
+                                                        <button type="button" id="carousel-arrow-prev" class="carousel-arrow carousel-arrow-prev" arial-label="Image précédente"><i class="icon icon-chevron-left"></i></button>
+                                                        <button type="button" id="carousel-arrow-next" class="carousel-arrow carousel-arrow-next" arial-label="Image suivante"><i class="icon icon-chevron-right"></i></button>
+
+                                                        <img id="carousel-0" class="img-fluid carousel-img carousel-img-displayed" src="images/person-1.jpg" alt="Winter" />
+                                                        <img id="carousel-1" class="img-fluid carousel-img carousel-img-noDisplay" src="images/face1.png" alt="Sea" />
+                                                        <img id="carousel-2" class="img-fluid carousel-img carousel-img-noDisplay" src="images/face2.jpg" alt="Night" />
+                                                        <img id="carousel-3" class="img-fluid carousel-img carousel-img-noDisplay" src="images/face3.png" alt="Moutain" />
+                                                        <img id="carousel-4" class="img-fluid carousel-img carousel-img-noDisplay" src="images/match.jpg" alt="Desert" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label">Nom</label>
+                                                    <input type="text" class="form-control form-control-sm" aria-label="Name">
+                                                    <br>
+                                                    <label class="label">Prénom</label>
+                                                    <input type="text" class="form-control form-control-sm" aria-label="Last name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label">Adresse</label>
+                                                    <input type="text" class="form-control form-control-sm" aria-label="address">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label">Date de naissance</label>
+                                                    <input type="text" class="form-control form-control-sm" aria-label="dateOfBirth">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label">Lieu de naissance</label>
+                                                    <input type="text" class="form-control form-control-sm" aria-label="placeOfBirth">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label">Sexe</label>
+                                                    <select class="form-control form-control-sm" id="sex">
+                                                        <option value="male">Homme</option>
+                                                        <option value="female">Femme</option>
+                                                      </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label">N°CIN</label>
+                                                    <input type="text" class="form-control form-control-sm" aria-label="cin">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label">Délivré le</label>
+                                                    <input type="text" class="form-control form-control-sm" aria-label="issue">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label">A</label>
+                                                    <input type="text" class="form-control form-control-sm" aria-label="deliveryPlace">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label">Fonction</label>
+                                                    <input type="text" class="form-control form-control-sm" aria-label="career">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label">A</label>
+                                                    <input type="text" class="form-control form-control-sm" aria-label="careerPlace">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="image-action text-right">
+                                            <button type="button" class="btn btn-outline-warning btn-process mr-3 mb-3"><i class="icon-registered"></i> Enregistrer</button>
+                                            <button type="button" class="btn btn-outline-danger btn-uploading mb-3"><i class="icon icon-cancel"></i> Annuler</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END section -->
+
+            <footer class="ftco-footer ftco-bg-dark ftco-section">
+                <div class="container">
+                    <div class="row mb-5 justify-content-center">
+                        <div class="col-md-5 text-center">
+                            <div class="ftco-footer-widget mb-5">
+                                <ul class="ftco-footer-social list-unstyled">
+                                    <li class="ftco-animate"><a href="https://www.linkedin.com/in/maevairina/"><span class="icon-linkedin"></span></a></li>
+                                    <li class="ftco-animate"><a href="https://www.facebook.com/maevasayurisan.ota"><span class="icon-facebook"></span></a></li>
+                                    <li class="ftco-animate"><a href="https://www.instagram.com/sayuriiri/"><span class="icon-instagram"></span></a></li>
+                                </ul>
+                            </div>
+                            <div class="ftco-footer-widget">
+                                <h2 class="mb-3">Contact Me </h2>
+                                <p class="h3 email"><a href="#">mig.razafimanjato@email.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p>
+                                Copyright &copy;
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true" style="color: rgb(136, 136, 136);"></i> by <a href="https://www.facebook.com/maevasayurisan.ota" target="_blank">Maeva</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--END footer-->
+
+            <!-- loader -->
+            <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#778899"/></svg></div>
+
+        </div>
+
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript" color="255,255,255" pointColor="255,255,255" opacity='0.7' zIndex="-2" count="100" src="dist/canvas-nest.js"></script>
+    <script type="text/javascript" src="dist/canvas-nest.umd.js"></script>
+    <script type="text/javascript">
+        var cn = new CanvasNest(document.getElementById('area-render'), {
+            color: '255,0,255',
+            count: 50,
+        });
+
+        // 下面为其他 js，无需关注
+        function asyncLoad() {
+            //async load github
+            var i = document.createElement("iframe");
+            i.src = "https://ghbtns.com/github-btn.html?user=hustcc&repo=canvas-nest.js&type=star&count=true";
+            i.scrolling = "no";
+            i.frameborder = "0";
+            i.border = "0";
+            i.setAttribute("frameborder", "0", 0);
+            i.width = "100px";
+            i.height = "20px";
+            document.getElementById("github-iframe").appendChild(i);
+        }
+
+        function loadGitHubBtn() {
+            if (window.addEventListener) {
+                window.addEventListener("load", asyncLoad, false);
+            } else if (window.attachEvent) {
+                window.attachEvent("onload", asyncLoad);
+            } else {
+                window.onload = asyncLoad;
+            }
+        }
+
+        loadGitHubBtn();
+    </script>
+
+    <script type="text/javascript">
+        document
+            .getElementById("carousel-arrow-next")
+            .addEventListener("click", carouselSwipe, false);
+        document
+            .getElementById("carousel-arrow-prev")
+            .addEventListener("click", carouselSwipe, false);
+
+        /**
+         * Switch header carousel to next image (swipe right)
+         */
+        function carouselSwipe() {
+            // Récupère les numéros de l'ancienne et la nouvelle image
+            var currentImg = document
+                .getElementsByClassName("carousel-img-displayed")[0]
+                .id.substring(9);
+            var newImg = parseInt(currentImg);
+
+            // Gestion du début et de la fin de la liste d'images
+            if (this.id == "carousel-arrow-next") {
+                newImg++;
+                if (newImg >= document.getElementsByClassName("carousel-img").length) {
+                    newImg = 0;
+                }
+            } else if (this.id == "carousel-arrow-prev") {
+                newImg--;
+                if (newImg < 0) {
+                    newImg = document.getElementsByClassName("carousel-img").length - 1;
+                }
+            }
+
+            // Disparition progressive de l'ancienne image
+            document.getElementById("carousel-" + currentImg).className =
+                "carousel-img carousel-img-hidden";
+
+            // Apparition progressive de la nouvelle image
+            var displayedCarousel = document.getElementById("carousel-" + newImg);
+            displayedCarousel.className = "carousel-img carousel-img-hidden";
+            setTimeout(function() {
+                displayedCarousel.className = "carousel-img carousel-img-displayed";
+            }, 20);
+
+            // Disparition totale de l'ancienne image
+            setTimeout(function() {
+                document.getElementById("carousel-" + currentImg).className =
+                    "carousel-img carousel-img-noDisplay";
+            }, 520);
+        }
+    </script>
+</body>
+
+</html>

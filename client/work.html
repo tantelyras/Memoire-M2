@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>My work</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="">
+
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+        
+        body {
+            font-family: "Lato", sans-serif;
+            -webkit-transition: background 0.5s ease;
+            transition: background 0.5s ease;
+        }
+        /*slide button*/
+        
+        .btn-view {
+            letter-spacing: 2px;
+            font-size: 13px;
+            color: rgba(255, 252, 252, 0.5);
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 252, 252, 0.5);
+            border-radius: 2px;
+            padding: 7px;
+            text-decoration: none;
+        }
+        
+        .btn-view:hover {
+            letter-spacing: 2px;
+            font-size: 14px;
+            color: rgba(252, 252, 252, 0.5);
+            background: rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 252, 252, 0.5);
+            border-radius: 2px;
+            padding: 7px;
+            text-decoration: none;
+        }
+        /*for searching image*/
+        
+        #one {
+            margin-top: 70px;
+            background: rgba(107, 107, 107, 0.2);
+            text-align: center;
+            box-shadow: 0px 0px 5px 2px rgba(216, 216, 216, 0.2);
+        }
+        
+        .it {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        p {
+            font-size: 16px;
+            text-align: center;
+            margin: 30px 0px;
+        }
+        /*work style*/
+        
+        .bold {
+            font-size: 5em;
+            position: absolute;
+            font-weight: 700 !important;
+            color: rgba(255, 255, 255, 0.08);
+            text-transform: uppercase;
+        }
+        /*upload image*/
+        
+        .panel {
+            margin: 100px auto 40px;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .button_outer {
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+            transition: 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn_upload {
+            padding: 17px 30px 12px;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            z-index: 3;
+            white-space: nowrap;
+        }
+        
+        .btn_upload input {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            height: 100px;
+            width: 200px;
+            cursor: pointer;
+            opacity: 0;
+        }
+        
+        .file_uploading {
+            width: 100%;
+            height: 10px;
+            margin-top: 20px;
+            background: #ccc;
+        }
+        
+        .file_uploading .btn_upload {
+            display: none;
+        }
+        
+        .processing_bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            border-radius: 30px;
+            background: #dbce0f;
+            transition: 3s;
+        }
+        
+        .file_uploading .processing_bar {
+            width: 100%;
+        }
+        
+        .success_box {
+            display: none;
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        
+        .success_box:before {
+            content: "";
+            display: block;
+            width: 9px;
+            height: 18px;
+            border-bottom: 6px solid #fff;
+            border-right: 6px solid #fff;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+        
+        .file_uploaded .success_box {
+            display: inline-block;
+        }
+        
+        .file_uploaded {
+            margin-top: 0;
+            width: 50px;
+            background: #dbce0f;
+            height: 40px;
+            border-radius: 50px;
+        }
+        
+        .uploaded_file_view {
+            max-width: 300px;
+            margin: 40px auto;
+            text-align: center;
+            position: relative;
+            transition: 0.2s;
+            opacity: 0;
+            border: 2px solid #047793;
+            padding: 15px;
+            display: inline-block;
+        }
+        
+        .file_remove {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            background: #047793;
+            line-height: 30px;
+            color: #fff;
+            font-size: 12px;
+            cursor: pointer;
+            right: -15px;
+            top: -15px;
+        }
+        
+        .file_remove:hover {
+            background: #024052;
+            transition: 0.2s;
+        }
+        
+        .uploaded_file_view img {
+            max-width: 100%;
+        }
+        
+        .uploaded_file_view.show {
+            opacity: 1;
+        }
+        
+        .error_msg {
+            text-align: center;
+            color: #f00;
+        }
+        
+        .image-action button {
+            border-radius: 5px;
+            width: 200px;
+            height: 50px;
+            display: block;
+            position: absolute;
+            line-height: 30px;
+            cursor: pointer;
+            left: -20px;
+            right: -20px;
+            margin-left: 70px;
+            bottom: -26px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="KW_progressContainer">
+        <div class="KW_progressBar">
+
+        </div>
+    </div>
+
+    <div class="page">
+        <nav id="colorlib-main-nav" role="navigation">
+            <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+            <div class="js-fullheight colorlib-table">
+                <div class="colorlib-table-cell js-fullheight">
+                    <div class="row no-gutters">
+                        <div class="col-md-12 text-center">
+                            <ul>
+                                <li><a href="index.html"><span>Home</span></a></li>
+                                <li><a href="masterlist.html"><span>Masterlist</span></a></li>
+                                <li class="active"><a href="work.html"><span>My works</span></a></li>
+                                <li><a href="about.html"><span>About me</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="colorlib-page">
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="colorlib-navbar-brand">
+                                <a class="colorlib-logo" href="index.html"><span class="logo-img" style="background-image: url(images/person-1.jpg);"></span>Maeva Razafimanjato</a>
+                            </div>
+                            <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--END Header-->
+
+            <section class="ftco-section">
+                <div class="container">
+                    <div class="row text-center">
+                        <h4 class="bold">My Works</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 ftco-animate" id="one">
+                            <p>
+                                Please upload image of person only in 'jpg', 'jpeg', 'png' format.
+                            </p>
+                            <div class="row it">
+                                <div class="col-sm-12">
+                                    <div class="error_msg"></div>
+                                    <div class="button_outer btn-warning">
+                                        <div class="btn_upload">
+                                            <input type="file" id="upload_file" name="">
+                                            <i class="icon icon-photo"></i>
+                                            <span>Upload Image</span>
+                                        </div>
+                                        <div class="processing_bar"></div>
+                                        <div class="success_box"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="uploaded_file_view" id="uploaded_view">
+                                <span class="file_remove">X</span>
+                                <div class="image-action text-center">
+                                    <button type="button" class="btn btn-info btn-process"><i class="icon icon-check button"></i> Select</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END section -->
+
+            <footer class="ftco-footer ftco-bg-dark ftco-section">
+                <div class="container">
+                    <div class="row mb-5 justify-content-center">
+                        <div class="col-md-5 text-center">
+                            <div class="ftco-footer-widget mb-5">
+                                <ul class="ftco-footer-social list-unstyled">
+                                    <li class="ftco-animate"><a href="https://www.linkedin.com/in/maevairina/"><span class="icon-linkedin"></span></a></li>
+                                    <li class="ftco-animate"><a href="https://www.facebook.com/maevasayurisan.ota"><span class="icon-facebook"></span></a></li>
+                                    <li class="ftco-animate"><a href="https://www.instagram.com/sayuriiri/"><span class="icon-instagram"></span></a></li>
+                                </ul>
+                            </div>
+                            <div class="ftco-footer-widget">
+                                <h2 class="mb-3">Contact Me </h2>
+                                <p class="h3 email"><a href="#">mig.razafimanjato@email.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+
+                            <p>
+                                Copyright &copy;
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true" style="color: rgb(136, 136, 136);"></i> by <a href="https://www.facebook.com/maevasayurisan.ota" target="_blank">Maeva</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--END footer-->
+
+            <!-- loader -->
+            <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#778899"/></svg></div>
+
+        </div>
+
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript" color="255,255,255" pointColor="255,255,255" opacity='0.7' zIndex="-2" count="100" src="dist/canvas-nest.js"></script>
+    <script type="text/javascript" src="dist/canvas-nest.umd.js"></script>
+    <script type="text/javascript">
+        var cn = new CanvasNest(document.getElementById('area-render'), {
+            color: '255,0,255',
+            count: 50,
+        });
+
+        // 下面为其他 js，无需关注
+        function asyncLoad() {
+            //async load github
+            var i = document.createElement("iframe");
+            i.src = "https://ghbtns.com/github-btn.html?user=hustcc&repo=canvas-nest.js&type=star&count=true";
+            i.scrolling = "no";
+            i.frameborder = "0";
+            i.border = "0";
+            i.setAttribute("frameborder", "0", 0);
+            i.width = "100px";
+            i.height = "20px";
+            document.getElementById("github-iframe").appendChild(i);
+        }
+
+        function loadGitHubBtn() {
+            if (window.addEventListener) {
+                window.addEventListener("load", asyncLoad, false);
+            } else if (window.attachEvent) {
+                window.attachEvent("onload", asyncLoad);
+            } else {
+                window.onload = asyncLoad;
+            }
+        }
+
+        loadGitHubBtn();
+    </script>
+
+    <!--image upload-->
+
+    <script type="text/javascript">
+        var btnUpload = $("#upload_file"),
+            btnOuter = $(".button_outer");
+        btnUpload.on("change", function(e) {
+            var ext = btnUpload.val().split(".").pop().toLowerCase();
+            if ($.inArray(ext, ["gif", "png", "jpg", "jpeg"]) == -1) {
+                $(".error_msg").text("Not an Image...");
+            } else {
+                $(".error_msg").text("");
+                btnOuter.addClass("file_uploading");
+                setTimeout(function() {
+                    btnOuter.addClass("file_uploaded");
+                }, 3000);
+                var uploadedFile = URL.createObjectURL(e.target.files[0]);
+                setTimeout(function() {
+                    $("#uploaded_view")
+                        .append('<img src="' + uploadedFile + '" />')
+                        .addClass("show");
+                }, 3500);
+            }
+        });
+        $(".file_remove").on("click", function(e) {
+            $("#uploaded_view").removeClass("show");
+            $("#uploaded_view").find("img").remove();
+            btnOuter.removeClass("file_uploading");
+            btnOuter.removeClass("file_uploaded");
+        });
+    </script>
+</body>
+
+</html>

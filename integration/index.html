@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <form enctype="multipart/form-data" v-on:change="upload">
+        <input type="file" name="file" id="file" />
+      </form>
+      <div v-if="faces.length">
+        <p>
+          {{ faces.length }} face{{ faces.length >1?'s':''}} détéctée{{
+          faces.length >1?'s':''}}
+        </p>
+        <div v-for="face in faces">
+          <img :src="'data:image/jpeg;base64,'+face" alt="" />
+          <button @click="search(face)">Choisir</button>
+        </div>
+      </div>
+
+      <!-- Add  -->
+      <div v-if="mode == 'add'">
+        <p>Ajouter</p>
+        image :
+        <img :src="'data:image/jpeg;base64,'+person.face" alt="" /><br />
+        Nom : <input type="text" v-model="person.name" /><br />
+        <button @click="add">Save</button>
+      </div>
+
+      <!-- Edit -->
+      <div v-if="mode == 'edit'">
+        <p>Editer</p>
+        images :
+        <img
+          v-for="face in person.faces"
+          :src="FILE_URL+face.image+'.png'"
+          alt=""
+        /><br />
+        Nouveau image :
+        <img :src="'data:image/jpeg;base64,'+person.new_face" alt="" />
+        <br />
+        Nom : <input type="text" v-model="person.name" /><br />
+        <button @click="save">Save</button>
+      </div>
+    </div>
+
+    <script src="js/vue.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

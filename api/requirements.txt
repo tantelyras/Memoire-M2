@@ -1,0 +1,14 @@
+Flask
+face-recognition==1.2.2
+face-recognition-models==0.3.0
+numpy
+Pillow
+dlib
+mongoengine>=0.18.2
+flask-mongoengine
+minio
+gunicorn
+eventlet
+Flask-JSON
+flask-cors
+

@@ -1,0 +1,52 @@
+version: "3"
+
+services:
+  # api:
+  #   depends_on:
+  #   - mongo
+  #   restart: always
+  #   build:
+  #     context: api
+  #     dockerfile: dev.Dockerfile
+  #   ports:
+  #     - "8888:8888"
+  #   volumes:
+  #     - ./api/:/home/flask
+  #   env_file: .env
+  mongo:
+    image: mongo:4.1.11
+    volumes:
+      - ./.volumes/mongo/data:/data/db
+    ports: 
+      - "27017:27017"
+  # minio:
+  #   image: minio/minio:RELEASE.2020-05-08T02-40-49Z
+
+  #   volumes:
+  #     - ./.volumes/faces:/data
+  #   ports:
+  #     - "9001:9000"
+  #   command: server /data
+  #   env_file:
+  #     - ./.env
+  #   environment:
+  #     MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY}
+  #     MINIO_SECRET_KEY: ${MINIO_SECRET_KEY}
+  #   healthcheck:
+  #     test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+  #     interval: 30s
+  #     timeout: 20s
+  #     retries: 3
+  # mc:
+  #   image: minio/mc
+  #   depends_on:
+  #     - minio
+  #   env_file:
+  #     - ./.env
+  #   entrypoint: >
+  #     /bin/sh -c "
+  #     /usr/bin/mc config host add data http://minio:9000 $${MINIO_ACCESS_KEY} $${MINIO_SECRET_KEY};
+  #     /usr/bin/mc ls data;
+  #     /usr/bin/mc mb data/faces;
+  #     /usr/bin/mc policy set download data/faces -r
+  #     "

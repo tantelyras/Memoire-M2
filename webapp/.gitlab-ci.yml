@@ -1,0 +1,20 @@
+image: node:12.16
+cache:
+    untracked: true
+    key: '$CI_BUILD_REF_NAME'
+    paths:
+        - node_modules/
+
+stages:
+    - development
+
+deploy_firebase_dev:
+    stage: development
+    image: node:12.16
+    script:
+        - npm i firebase-tools
+        - npm install
+        - npm run generate
+        - $(npm bin)/firebase deploy --token "$FIREBASE_TOKEN"
+    only:
+        - develop

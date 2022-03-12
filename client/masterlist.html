@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Masterlist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/animate.css">
+
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="filepond-plugin-image-preview.min.css">
+    <link rel="stylesheet" href="filepond.min.css">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+        
+        body {
+            font-family: "Lato", sans-serif;
+            -webkit-transition: background 0.5s ease;
+            transition: background 0.5s ease;
+        }
+        
+        .one {
+            margin-top: 70px;
+            background: rgba(107, 107, 107, 0.2);
+            box-shadow: 0px 0px 5px 2px rgba(216, 216, 216, 0.2);
+        }
+        /*Mastble*/
+        
+        .table td,
+        .table th {
+            border-top: none;
+        }
+        
+        .list-image {
+            width: 100px;
+        }
+        
+        .list-image img {
+            border-radius: 50%;
+            vertical-align: middle;
+            border-style: none;
+        }
+        
+        .row {
+            margin-bottom: 20px;
+        }
+        
+        .add-new {
+            height: 50px;
+            width: 200px;
+            border-radius: 2px;
+        }
+        /*work style*/
+        
+        .bold {
+            font-size: 5em;
+            position: absolute;
+            top: 120px;
+            left: 50px;
+            right: 50px;
+            font-weight: 700 !important;
+            color: rgba(255, 255, 255, 0.08);
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="KW_progressContainer">
+        <div class="KW_progressBar">
+
+        </div>
+    </div>
+
+    <div class="page">
+        <nav id="colorlib-main-nav" role="navigation">
+            <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+            <div class="js-fullheight colorlib-table">
+                <div class="colorlib-table-cell js-fullheight">
+                    <div class="row no-gutters">
+                        <div class="col-md-12 text-center">
+                            <ul>
+                                <li><a href="index.html"><span>Home</span></a></li>
+                                <li class="active"><a href="masterlist.html"><span>Masterlist</span></a></li>
+                                <li><a href="work.html"><span>My works</span></a></li>
+                                <li><a href="about.html"><span>About me</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!--END nav-->
+
+        <div id="colorlib-page">
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="colorlib-navbar-brand">
+                                <a class="colorlib-logo" href="index.html"><span class="logo-img" style="background-image: url(images/person-1.jpg);"></span>Maeva Razafimanjato</a>
+                            </div>
+                            <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--END header-->
+
+            <section class="ftco-section">
+                <div class="container">
+                    <div class="row text-center">
+                        <h4 class="bold">Masterlist</h4>
+                    </div>
+                    <div class="card one ftco-animate">
+                        <div class="card-body" style="overflow-x:auto;">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-outline-info add-new">
+                                        <i class="icon icon-add"></i> Add New</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-hover" id="editableTable">
+                                        <tr>
+                                            <th>Pic</th>
+                                            <th>Full Name</th>
+                                            <th>CIN No</th>
+                                            <th>Available images</th>
+                                            <th>Edit</th>
+                                        </tr>
+                                        <tr data-id="1">
+                                            <td align="center">
+                                                <div class="list-image align-self-md-center">
+                                                    <img src="images/person-2.jpg" alt="Image placeholder" class="img-fluid">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="desc align-self-md-center">
+                                                    <h5 data-field="name" style="color: rgb(10, 10, 10);">RASOAMANANA</h5>
+                                                    <p data-field="lastName">Diamondra</p>
+                                                </div>
+                                            </td>
+                                            <td>313 012 024 816</td>
+                                            <td>2</td>
+                                            <td>
+                                                <a class="button button-small edit" title="Edit">
+                                                    <i class="icon icon-pencil"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr data-id="1">
+                                            <td align="center">
+                                                <div class="list-image align-self-md-center">
+                                                    <img src="images/person-1.jpg" alt="Image placeholder" class="img-fluid">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="desc align-self-md-center">
+                                                    <h5 data-field="name" style="color: rgb(10, 10, 10);">RAZAFIMANJATO</h5>
+                                                    <p data-field="lastName">Maevasoa Irina Gabriela</p>
+                                                </div>
+                                            </td>
+                                            <td>313 012 024 816</td>
+                                            <td>4</td>
+                                            <td>
+                                                <a class="button button-small edit" title="Edit">
+                                                    <i class="icon icon-pencil"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </section>
+            <!-- END section -->
+
+            <footer class="ftco-footer ftco-bg-dark ftco-section">
+                <div class="container">
+                    <div class="row mb-5 justify-content-center">
+                        <div class="col-md-5 text-center">
+                            <div class="ftco-footer-widget mb-5">
+                                <ul class="ftco-footer-social list-unstyled">
+                                    <li class="ftco-animate"><a href="https://www.linkedin.com/in/maevairina/"><span class="icon-linkedin"></span></a></li>
+                                    <li class="ftco-animate"><a href="https://www.facebook.com/maevasayurisan.ota"><span class="icon-facebook"></span></a></li>
+                                    <li class="ftco-animate"><a href="https://www.instagram.com/sayuriiri/"><span class="icon-instagram"></span></a></li>
+                                </ul>
+                            </div>
+                            <div class="ftco-footer-widget">
+                                <h2 class="mb-3">Contact Us</h2>
+                                <p class="h3 email"><a href="#">info@email.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p>
+                                Copyright &copy;
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true" style="color: rgb(136, 136, 136);"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--END footer-->
+
+            <!-- loader -->
+            <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#778899"/></svg></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!--particle-->
+    <script type="text/javascript" color="255,255,255" pointColor="255,255,255" opacity='0.7' zIndex="-2" count="100" src="dist/canvas-nest.js"></script>
+    <script type="text/javascript" src="dist/canvas-nest.umd.js"></script>
+    <script type="text/javascript">
+        var cn = new CanvasNest(document.getElementById('area-render'), {
+            color: '255,0,255',
+            count: 50,
+        });
+
+        // 下面为其他 js，无需关注
+        function asyncLoad() {
+            //async load github
+            var i = document.createElement("iframe");
+            i.src = "https://ghbtns.com/github-btn.html?user=hustcc&repo=canvas-nest.js&type=star&count=true";
+            i.scrolling = "no";
+            i.frameborder = "0";
+            i.border = "0";
+            i.setAttribute("frameborder", "0", 0);
+            i.width = "100px";
+            i.height = "20px";
+            document.getElementById("github-iframe").appendChild(i);
+        }
+
+        function loadGitHubBtn() {
+            if (window.addEventListener) {
+                window.addEventListener("load", asyncLoad, false);
+            } else if (window.attachEvent) {
+                window.attachEvent("onload", asyncLoad);
+            } else {
+                window.onload = asyncLoad;
+            }
+        }
+
+        loadGitHubBtn();
+    </script>
+
+
+</body>
+
+</html>
